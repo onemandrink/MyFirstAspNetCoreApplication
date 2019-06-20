@@ -21,6 +21,7 @@ namespace MyFirstAspNetCoreApplication.Controllers
         }
 
         // GET: Students
+        // we can change pageNumber to pageIndex for better readability
         public async Task<IActionResult> Index(string sortOrder, string currentFilter, string searchString, int? pageNumber)
         {
             ViewData["CurrentSort"] = sortOrder;
