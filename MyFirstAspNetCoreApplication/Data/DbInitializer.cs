@@ -184,7 +184,8 @@ namespace MyFirstAspNetCoreApplication.Data
                 var enrollmentInDatabase = context.Enrollments.Where(s => s.Student.ID == enrollment.StudentID
                 && s.Course.CourseID == enrollment.CourseID).SingleOrDefault();
 
-                if (enrollmentInDatabase != null)
+                // previous commit is !=. please change it to == in order to populate Enrollment Table
+                if (enrollmentInDatabase == null)
                 {
                     context.Enrollments.Add(enrollment);
                 }
@@ -192,7 +193,6 @@ namespace MyFirstAspNetCoreApplication.Data
 
             context.SaveChanges();
             #endregion
-
         }
     }
 }
