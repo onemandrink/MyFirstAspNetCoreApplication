@@ -80,7 +80,7 @@ namespace MyFirstAspNetCoreApplication.Controllers
                 .Include(s => s.Enrollments)
                 .ThenInclude(e => e.Course)
                 .AsNoTracking()
-                .FirstOrDefaultAsync(m => m.ID == id);
+                .SingleOrDefaultAsync(m => m.ID == id);
 
             if (student == null)
             {
